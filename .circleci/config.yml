@@ -10,9 +10,9 @@ jobs:
           command: apk add --no-cache zip
       - run:
           name: Create zip file
-          command: zip DonanbusGTFS.zip *.txt
+          command: zip /artifacts/DonanbusGTFS.zip *.txt
       - persist_to_workspace:
-          root: ./
+          root: /artifacts
           paths:
             - DonanbusGTFS.zip
   publish-github-release:
@@ -20,11 +20,11 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - attach_workspace:
-          at: ./
+          at: /artifacts
       - run:
           name: "Publish Release on GitHub"
           command: |
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /artifacts
 
 workflows:
   version: 2
