@@ -10,7 +10,7 @@ jobs:
           command: apk add --no-cache zip
       - run:
           name: Create /artifacts directory
-          command: /artifacts
+          command: mkdir /artifacts
       - run:
           name: Create zip file
           command: zip /artifacts/DonanbusGTFS.zip *.txt
