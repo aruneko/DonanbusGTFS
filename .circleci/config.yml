@@ -9,6 +9,9 @@ jobs:
           name: Install zip command
           command: apk add --no-cache zip
       - run:
+          name: Create /artifacts directory
+          command: /artifacts
+      - run:
           name: Create zip file
           command: zip /artifacts/DonanbusGTFS.zip *.txt
       - persist_to_workspace:
