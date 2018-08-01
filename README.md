@@ -11,6 +11,8 @@ GTFS(General Transit Feed Specification)は、公共交通機関の時刻表デ�
 # この「日本版GTFS」ファイルについて
 このバージョンは、2018年4月1日に改定された時刻表に基づいています。
 
+なお、`feed_inf.txt`の`feed_version`はZipファイル作成時に置換していますので、ご利用時はご注意ください。
+
 # 実装など
 Python3.xで実装しています。基本的にExcelなどの生データから抽出する形をとっています。
 
