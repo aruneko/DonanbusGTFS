@@ -15,6 +15,9 @@ jobs:
           name: Create /artifacts directory
           command: mkdir /artifacts
       - run:
+          name: Replace feed_version in feed_info.txt
+          command: sed -i "s/DUMMY_VERSION/${CIRCLE_TAG}/" feed_info.txt
+      - run:
           name: Create zip file
           command: zip /artifacts/DonanbusGTFS.zip *.txt
       - persist_to_workspace:
