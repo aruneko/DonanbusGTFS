@@ -4,10 +4,13 @@ jobs:
     docker:
       - image: alpine
     steps:
+      - run:
+          name: Install git ahd SSH
+          command: apk add --nocache --update openssh git
       - checkout
       - run:
           name: Update SSL
-          command: apk add --no-cache --update ca-certificates openssl && update-ca-certificates
+          command: apk add --no-cache ca-certificates openssl && update-ca-certificates
       - run:
           name: Install zip command
           command: apk add --no-cache zip
