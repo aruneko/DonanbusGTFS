@@ -1,2 +1,2 @@
 feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version
-Code for Muroran,https://ja.localwiki.org/mr/Code_for_Muroran,ja,20191201,20201130,DUMMY_VERSION
+Code for Muroran,https://ja.localwiki.org/mr/Code_for_Muroran,ja,20200401,20210401,DUMMY_VERSION
